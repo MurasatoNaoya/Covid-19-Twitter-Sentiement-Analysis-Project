@@ -7,7 +7,7 @@
 from textblob import TextBlob
 import sys
 import tweepy
-import matplotlib.pyplot as plt
+import matplotlib.pyplot as plt   # Here we used the 'as' keyword to create an alias for the module we want to import. 
 import pandas as pd
 import numpy as np
 import os
@@ -15,6 +15,7 @@ import nltk
 import pycountry
 import re
 import string
+
 from wordcloud import WordCloud, STOPWORDS
 from PIL import Image
 from nltk.sentiment.vader import SentimentIntensityAnalyzer
