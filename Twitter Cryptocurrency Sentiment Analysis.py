@@ -3,11 +3,10 @@
 
 
 # Import the appropriate libraries 
-
-import tweepy 
+# Import Libraries
 from textblob import TextBlob
 import sys
-
+import tweepy
 import matplotlib.pyplot as plt
 import pandas as pd
 import numpy as np
@@ -16,8 +15,25 @@ import nltk
 import pycountry
 import re
 import string
+from wordcloud import WordCloud, STOPWORDS
+from PIL import Image
+from nltk.sentiment.vader import SentimentIntensityAnalyzer
+from langdetect import detect
+from nltk.stem import SnowballStemmer
+from nltk.sentiment.vader import SentimentIntensityAnalyzer
+from sklearn.feature_extraction.text import CountVectorizer
 
 
+# Next we will need the consumer API key, the consumer API secret, access token and access token secret 
+
+consumerAPIKey = AVudPPS0nePRUgOAWNOOyQZB4
+consumerAPISecret = KeATWWKKjZYcJr9OExhMq1t2fKH35j5Z8hmPNwKOIg3EhwBHKv
+accessToken = 1454520951136194564-dXDgv1tI9EeRvMysAI1xpJxjpDW9hg
+accessTokenSecret =  ByCcAp1zRDt2AuGCsu4astZtp78dBYDqjxQfh7G0dia7N
+
+auth = tweepy.OAuthHandler(consumerKey, consumerSecret)
+auth.set_access_token(accessToken, accessTokenSecret)
+api = tweepy.API(auth)
 
 
 
