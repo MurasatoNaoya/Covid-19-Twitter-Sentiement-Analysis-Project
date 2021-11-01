@@ -30,14 +30,11 @@ from sklearn.feature_extraction.text import CountVectorizer
 # Next we will need the consumer API key, the consumer API secret, access token and access token secret. 
 # I rec
 
-consumerAPIKey = AVudPPS0nePRUgOAWNOOyQZB4
-consumerAPISecret = KeATWWKKjZYcJr9OExhMq1t2fKH35j5Z8hmPNwKOIg3EhwBHKv
-accessToken = 1454520951136194564-dXDgv1tI9EeRvMysAI1xpJxjpDW9hg
-accessTokenSecret =  ByCcAp1zRDt2AuGCsu4astZtp78dBYDqjxQfh7G0dia7N
+Oauth1_consumer_sey = AVudPPS0nePRUgOAWNOOyQZB4
+oauth1_consumer_secret = KeATWWKKjZYcJr9OExhMq1t2fKH35j5Z8hmPNwKOIg3EhwBHKv
+oauth1_access_token = 1454520951136194564-dXDgv1tI9EeRvMysAI1xpJxjpDW9hg
+oauth1_access_token_secret =  ByCcAp1zRDt2AuGCsu4astZtp78dBYDqjxQfh7G0dia7N
 
-auth = tweepy.OAuthHandler(consumerKey, consumerSecret)
-auth.set_access_token(accessToken, accessTokenSecret)
-api = tweepy.API(auth)
 
 
 
