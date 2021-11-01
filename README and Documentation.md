@@ -4,7 +4,9 @@
 This project aims to scrape data, specifically Tweets, to gauge the opinions and sentiments of users regarding a particular subject. 
 It is important to note that although keyword(s) in this project will be focused on blockchain and crytocurreny terminology, it can be easily changed to other keywords. 
 
-Intially, the raw data will be collected by using the Twitter API to scrape Tweets from the Twitter platform. 
+Firstly, we would need to get authentication to use Twitter's API. tweepy handles two different types of authentication, OAuth 1.0a and OAuth 2.0. 
+
+he raw data will be collected by using the Twitter API to scrape Tweets from the Twitter platform. 
 Then, by using python libraires associated with textual processing and sentiment analysis, we will be able to discerne the proportion of positive, negative and neutral sentiments in our sample. 
 
 
