@@ -27,14 +27,25 @@ from nltk.sentiment.vader import SentimentIntensityAnalyzer
 from sklearn.feature_extraction.text import CountVectorizer
 
 
-# Next we will need the consumer API key, the consumer API secret, access token and access token secret. 
-# I rec
+# Twitter API credentials - consumer API key, the consumer API secret, access token and access token secret. 
 
-Oauth1_consumer_sey = "AVudPPS0nePRUgOAWNOOyQZB4"
+Oauth1_consumer_key = "AVudPPS0nePRUgOAWNOOyQZB4"
 oauth1_consumer_secret = "KeATWWKKjZYcJr9OExhMq1t2fKH35j5Z8hmPNwKOIg3EhwBHKv"
 oauth1_access_token = "1454520951136194564-dXDgv1tI9EeRvMysAI1xpJxjpDW9hg"
 oauth1_access_token_secret = "ByCcAp1zRDt2AuGCsu4astZtp78dBYDqjxQfh7G0dia7N"
 
 
+
+# Create our authentication object - 
+
+authentication = tweepy.OAuthHandler(Oauth1_consumer_key, oauth1_consumer_secret)
+
+# Set the access token and access token secret - 
+
+authentication.set_access_token(oauth1_access_token, oauth1_access_token_secret)
+
+# Create the API object, specifc to our authentication information - 
+
+api = tweepy.API(authentication, wait_on_rate_limit= True)
 
 
