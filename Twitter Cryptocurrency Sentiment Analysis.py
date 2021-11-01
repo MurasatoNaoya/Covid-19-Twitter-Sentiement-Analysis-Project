@@ -2,29 +2,19 @@
 # In the aim of getting a better understanding of the impression or 'sentiment' users have of certain cryptocurrencies. 
 
 
-# Import the appropriate libraries 
+# Import the appropriate libraries - 
 
-from textblob import TextBlob
-import sys
 import tweepy
+from textblob import TextBlob
+from wordcloud import WordCloud
+import sys
+import re
 
 import matplotlib.pyplot as plt   # Here we used the 'as' keyword to create an alias for the module we want to import. 
+plt.style.use(seaborn-bright) # What style use choose does not matter, I have chosen 'seaborn-bright'; but you could have anything; e.g fivethirtyeight. 
 import pandas as pd
 import numpy as np
 
-import os
-import nltk
-import pycountry
-import re
-import string
-
-from wordcloud import WordCloud, STOPWORDS
-from PIL import Image
-from nltk.sentiment.vader import SentimentIntensityAnalyzer
-from langdetect import detect
-from nltk.stem import SnowballStemmer
-from nltk.sentiment.vader import SentimentIntensityAnalyzer
-from sklearn.feature_extraction.text import CountVectorizer
 
 
 # Twitter API credentials - consumer API key, the consumer API secret, access token and access token secret. 
