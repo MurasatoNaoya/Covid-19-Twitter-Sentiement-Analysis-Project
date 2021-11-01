@@ -3,13 +3,15 @@
 
 
 # Import the appropriate libraries 
-# Import Libraries
+
 from textblob import TextBlob
 import sys
 import tweepy
+
 import matplotlib.pyplot as plt   # Here we used the 'as' keyword to create an alias for the module we want to import. 
 import pandas as pd
 import numpy as np
+
 import os
 import nltk
 import pycountry
