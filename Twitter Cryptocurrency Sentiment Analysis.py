@@ -25,7 +25,8 @@ from nltk.sentiment.vader import SentimentIntensityAnalyzer
 from sklearn.feature_extraction.text import CountVectorizer
 
 
-# Next we will need the consumer API key, the consumer API secret, access token and access token secret 
+# Next we will need the consumer API key, the consumer API secret, access token and access token secret. 
+# I rec
 
 consumerAPIKey = AVudPPS0nePRUgOAWNOOyQZB4
 consumerAPISecret = KeATWWKKjZYcJr9OExhMq1t2fKH35j5Z8hmPNwKOIg3EhwBHKv
