@@ -42,7 +42,50 @@ api = tweepy.API(authentication, wait_on_rate_limit= True)
 
 # Now that we have authentication, we can now use the tweepy and TextBlob modules to retrieve Tweets and discern intention parameters, respectively.
 
+
 # Sentiment analysis - 
+
+def percentage(part,whole):
+   return 100 * float(part)/float(whole)
+ 
+
+# Recording the keyword(s) and number of Tweets being considered - the input() may not be called unless you are using an interactive interface like Juypter. 
+  
+keyword = input("Please enter keyword or hashtag to search: ")
+NoOfTweets = int(input ("Please enter how many tweets to analyse: "))
+
+
+# Using tweepy to search and collect Tweets based on the predefined keyword(s) and number of Tweets we want to analyse - 
+
+tweets = tweepy.Cursor(api.search, q = keyword).items(NoOfTweets) # [Explain the usage of these function unique to tweepy]
+
+# Below are neutral 
+positive = 0
+positive = 0
+neutral = 0
+polarity = 0
+
+
+tweet_list = []
+neutral_list = []
+negative_list = []
+positive_list = []
+
+
+
+for tweet in tweets: # Essentially, for every Tweets in the list of int(NoOfTweets) Tweets that our API has scraped.. 
+   tweet_list.append(tweet.text)
+
+
+
+
+
+
+# It is important to note that there are specific pieces of terminology unique to each library. 
+# In the context of TextBlob, polarity indicates is a float in the range [-1-1], where 1 indicates a purely positive statement and -1 and purely negative statement.
+
+
+
 
 
 
