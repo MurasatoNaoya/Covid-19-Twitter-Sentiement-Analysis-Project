@@ -76,13 +76,17 @@ positive_list = []
 for tweet in tweets: # Essentially, for every Tweet in the list of int(NoOfTweets) Tweets that our API has scraped.. 
    tweet_list.append(tweet.text)
 
-
+ 
+   # We can now make our first 'TextBlob' using the TextBlob module, (Refer to this difficulty in the README file, linking the TextBlob Documentation.)
+   # This is in the for loop, so each individual tweet will be treated as a TextBlob to be processed. 
+   analysis = TextBlob(tweet.text)
 
 
 
 
 # It is important to note that there are specific pieces of terminology unique to each library. 
 # In the context of TextBlob, polarity indicates is a float in the range [-1-1], where 1 indicates a purely positive statement and -1 and purely negative statement.
+
 
 
 
