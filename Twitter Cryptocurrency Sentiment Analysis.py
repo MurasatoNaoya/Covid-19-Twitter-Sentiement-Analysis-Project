@@ -39,3 +39,15 @@ authentication.set_access_token(oauth1_access_token, oauth1_access_token_secret)
 api = tweepy.API(authentication, wait_on_rate_limit= True)
 
 
+
+# Now that we have authentication, we can now use the tweepy and TextBlob modules to retrieve Tweets and discern intention parameters, respectively.
+
+# Sentiment analysis - 
+
+
+
+
+
+
+
+
