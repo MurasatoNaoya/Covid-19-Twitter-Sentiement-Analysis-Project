@@ -26,15 +26,15 @@ oauth1_access_token_secret = "ByCcAp1zRDt2AuGCsu4astZtp78dBYDqjxQfh7G0dia7N"
 
 
 
-# Create our authentication object - 
+# Creating an instance of tweepy's .AuthHandler class - 
 
 authentication = tweepy.OAuthHandler(Oauth1_consumer_key, oauth1_consumer_secret)
 
-# Set the access token and access token secret - 
+# Setting the access token and access token secret - 
 
 authentication.set_access_token(oauth1_access_token, oauth1_access_token_secret)
 
-# Create the API object, specifc to our authentication information - 
+# Creating the API object, specific to our authentication information - 
 
 api = tweepy.API(authentication, wait_on_rate_limit= True)
 
