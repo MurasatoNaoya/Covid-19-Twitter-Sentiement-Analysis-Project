@@ -43,7 +43,8 @@ api = tweepy.API(authentication, wait_on_rate_limit= True)
 # Now that we have authentication, we can now use the tweepy and TextBlob modules to retrieve Tweets and discern intention parameters, respectively.
 
 
-# Sentiment analysis - 
+# The below self defined function is to be used later to calculate the percentage of positive, negative and neutral Tweets we have in our sample.
+# The 'part' paramater representing whatever category of sentiment was want to look at and the 'whole' parameter representing our total number of Tweets, NoOfTweets. 
 
 def percentage(part,whole):
    return 100 * float(part)/float(whole)
@@ -65,7 +66,6 @@ positive = 0
 neutral = 0
 polarity = 0
 
-
 tweet_list = []
 neutral_list = []
 negative_list = []
@@ -73,7 +73,7 @@ positive_list = []
 
 
 
-for tweet in tweets: # Essentially, for every Tweets in the list of int(NoOfTweets) Tweets that our API has scraped.. 
+for tweet in tweets: # Essentially, for every Tweet in the list of int(NoOfTweets) Tweets that our API has scraped.. 
    tweet_list.append(tweet.text)
 
 
