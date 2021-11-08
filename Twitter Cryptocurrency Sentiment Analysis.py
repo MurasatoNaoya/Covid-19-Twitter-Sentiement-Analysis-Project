@@ -60,10 +60,11 @@ NoOfTweets = int(input ("Please enter how many tweets to analyse: "))
 
 tweets = tweepy.Cursor(api.search, q = keyword).items(NoOfTweets) # [Explain the usage of these function unique to tweepy]
 
-# Below are neutral 
+# Below are neutral lists, where the analysed tweets will be appended to - 
 positive = 0
 positive = 0
 neutral = 0
+
 polarity = 0
 
 tweet_list = []
