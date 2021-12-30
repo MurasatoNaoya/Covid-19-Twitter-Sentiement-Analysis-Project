@@ -35,8 +35,11 @@ authentication = tweepy.OAuthHandler(Oauth1_consumer_key, oauth1_consumer_secret
 authentication.set_access_token(oauth1_access_token, oauth1_access_token_secret)
 
 # Creating the API object, that accounts for our authentication information - 
+# The Twitter API has a rate limit of 900 requests per 15 minutes, it would return anything above this amount an error. 
+# 'wait_on_rate_limit' is set to 'True' to account for this limitation. 
 
 api = tweepy.API(authentication, wait_on_rate_limit= True)
+
 
 
 
