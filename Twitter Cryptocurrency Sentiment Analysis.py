@@ -11,7 +11,7 @@ import sys
 import re
 
 import matplotlib.pyplot as plt   # Here we used the 'as' keyword to create an alias for the module we want to import. 
-plt.style.use(seaborn-bright) # What style use choose does not matter, I have chosen 'seaborn-bright'; but you could have anything; e.g fivethirtyeight. 
+plt.style.use(seaborn-bright) # What style I;ve chosen doesn't really matter, I have chosen 'seaborn-bright', but you could have anything. E.g fivethirtyeight. 
 import pandas as pd
 import numpy as np
 
