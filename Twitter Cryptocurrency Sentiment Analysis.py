@@ -1,5 +1,5 @@
 # The aim of this program is scrape data, or in this case, tweets from Twitter.
-# In the aim of getting a better understanding of the impression or 'sentiment' users have of certain cryptocurrencies. 
+# In the aim of getting a better understanding of the impression or 'sentiment' users have of the implementation of restrictive Covid-19 policies. 
 
 
 # Import the appropriate libraries - 
