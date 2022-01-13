@@ -14,7 +14,7 @@ import matplotlib.pyplot as plt   # Here we used the 'as' keyword to create an a
 plt.style.use(seaborn-bright) # What style chosen here doesn't really matter, I have chosen 'seaborn-bright' but you could have anything. E.g fivethirtyeight. 
 import pandas as pd
 import numpy as np
-
+from nltk.sentiment.vader import SentimentIntensityAnalyzer  # [Talk about Vader, it's application(s) and how it can used alongside TextBlob.]
 
 
 # Twitter API credentials - consumer API key, the consumer API secret, access token and access token secret. 
@@ -81,14 +81,34 @@ positive_list = []
 for tweet in tweets: # Essentially, for every Tweet in the list of int(NoOfTweets) Tweets that our API has scraped. 
    tweet_list.append(tweet.text) # Add the Tweet text data to tweet_list 
 
-# We can now make our first 'TextBlob' using the TextBlob module, (Refer to this difficulty in the README file, linking the TextBlob Documentation.)
-# This is in the for loop, so each individual tweet will be treated as a TextBlob to be processed. 
-   analysis = TextBlob(tweet.text)
+   # We can now make our first 'TextBlob' using the TextBlob module, (Refer to this difficulty in the README file, linking the TextBlob Documentation.)
+   # This is in the for loop, so each individual tweet will be treated as a TextBlob to be processed. 
+   analysis = TextBlob(tweet.text) # This analysis variable will be needed to calculate your polarity value for each individual tweet. 
+   
+   # The polarity_scores method from the SentimentIntensityAnalyzer module, produces a dictionary of positive, negative, neutral and compound indexes. 
+   # That in this case, describe the sentiment of the scrapred tweet. 
+   point_score = SentimentIntensityAnalyzer().polarity_scores(tweet.text)
+   
+   # We can now assign the scores associated with the dictionary keys produced, to new variables. 
+   neg = score('neg')
+   neu = score('neu')
+   pos = score('pos')
+   comp = score'compound'
+   
+   # +- is neccessary to add up all of the polarity score for whatever number of Tweets you analyse. 
+   # This final score can later be divided by that same number of tweets, to produce an average polarity score for a specific topic. 
+   polarity += analysis.sentiment.polarity 
 
 
 
 
-# It is important to note that there are specific pieces of terminology unique to each library. 
+   
+   
+   
+   
+   
+   
+   # It is important to note that there are specific pieces of terminology unique to each library. 
 
 
 
