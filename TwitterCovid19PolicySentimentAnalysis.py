@@ -97,6 +97,7 @@ for tweet in tweets: # Essentially, for every Tweet in the list of int(NoOfTweet
    
    # +- is neccessary to add up all of the polarity score for whatever number of Tweets you analyse. 
    # This final score can later be divided by that same number of tweets, to produce an average polarity score for a specific topic. 
+   # The final polarity score can be presented as a percentage using percentage(), or it can be presentes as a decimal, both are fine either way. 
    polarity += analysis.sentiment.polarity 
 
 
