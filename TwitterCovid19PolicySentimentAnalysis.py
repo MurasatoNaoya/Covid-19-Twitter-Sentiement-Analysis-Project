@@ -58,7 +58,9 @@ NoOfTweets = int(input ("Please enter how many tweets to analyse: "))
 
 # Using tweepy to search and collect Tweets based on the predefined keyword(s) and number of Tweets we want to analyse - 
 
-tweets = tweepy.Cursor(api.search, q = keyword).items(NoOfTweets) # [Explain the usage of these function unique to tweepy]
+tweets = tweepy.Cursor(api.search, q = keyword).items(NoOfTweets) 
+# Above we have defined what keyword(s) we want to analyse as well as the number of times this should be iterated. 
+# The 'tweets' variable is just a list that contains all of the tweets from this iterative process of selecting related tweets. 
 
 # Below are baseline counters that will be added to in order to keep track of the number of each tweet with different sentiment. 
 # As well as neutral lists, where 'tweet_list' is all of the gathered tweets and all the others are Tweet lists that have been sorted by sentiment - 
