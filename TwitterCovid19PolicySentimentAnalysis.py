@@ -43,7 +43,7 @@ api = tweepy.API(authentication, wait_on_rate_limit= True)
 
 
 
-# Now that we have authentication for our application, we can now use the Tweepy and TextBlob modules to retrieve Tweets and discern intention/polarity values - 
+# Now that we have authentication for our application, we can now use Tweepy, TextBlob and VADER to conduct sentiment analysis - 
 
 # The below self-defined function will be used later to calculate the percentage of positive, negative and neutral Tweets we have in our sample.
 # The 'part' paramater representing whatever category of sentiment we want to look at and the 'whole' parameter representing our total number of Tweets - NoOfTweets. 
