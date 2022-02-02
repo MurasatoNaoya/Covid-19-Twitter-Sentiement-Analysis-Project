@@ -110,24 +110,21 @@ for tweet in tweets: # For every Tweet in the list of 'NoOfTweets' Tweets that o
    subjectivity += analysis.sentiment.subjectivity 
 
 
-
+# Depending on the scores produced, we can now sort each Tweet into distinct categories and aggregate overall sentiment - 
    if neg > pos: 
       negative += 1 
       negative_list.append(tweet)
-      
-      
+            
    elif pos > neg: 
       positive += 1 
       positive_list.append(tweet)
-      
       
    elif neg == pos: 
       neutral += 1 
       neutral_list.append(tweet)
    
    
-   
-   
+  
 positive_proportion = percentage(positive, NoOfTweets)
 negative_proportion = percentage(negative, NoOfTweets)
 neutral_proportion = percentage(neutral, NoOfTweets)
