@@ -50,8 +50,8 @@ def percentage(part,whole):
    return 100 * float(part)/float(whole)
 
 # Recording the keyword(s) and number of Tweets being considered
-keyword = input("Please enter keyword or hashtag to search: ")
-NoOfTweets = int(input ("Please enter how many tweets to analyse: "))
+keyword = input("Please enter keyword or hashtag to focus your search: ")
+NoOfTweets = int(input ("Please enter how many tweets you want to analyse: "))
 
 # Using tweepy to search and collect Tweets based on the predefined keyword(s) and number of Tweets we want to analyse - 
 tweets = tweepy.Cursor(api.search, q = keyword).items(NoOfTweets) 
@@ -110,13 +110,30 @@ for tweet in tweets: # For every Tweet in the list of 'NoOfTweets' Tweets that o
 
 
 
+   if neg > pos: 
+      negative += 1 
+      negative_list.append(tweet)
+      
+      
+   elif pos > neg: 
+      positive += 1 
+      positive_list.append(tweet)
+      
+      
+   elif neg == pos: 
+      neutral += 1 
+      neutral_list.append(tweet)
    
    
    
    
+positive_proportion = percentage(positive, NoOfTweets)
+negative_proportion = percentage(negative, NoOfTweets)
+neutral_proportion = percentage(neutral, NoOfTweets)
+aggregated_polarity = polarity / NoOfTweets 
+agregated_subjectivity = subjectivity / NoOfTweets
    
-   
-   # It is important to note that there are specific pieces of terminology unique to each library. 
+  
 
 
 
