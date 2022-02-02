@@ -20,7 +20,7 @@ from nltk.sentiment.vader import SentimentIntensityAnalyzer  # [Talk about Vader
 # Firstly, we need to earn access to the Twitter API through for this particular app(lication) -
 
 # Twitter API credentials - consumer API key, the consumer API secret, access token and access token secret. 
-# The keys listed below are the keys for my particular Twitter Developer account, I probobaly shouldn't include them for security reasons. 
+# The keys listed below are the keys for my particular Twitter Developer account, I probably shouldn't include them for security reasons. 
 # But I can always take them out and if someone goes out of their way to use my application, then so be it!  
 Oauth1_consumer_key = "AVudPPS0nePRUgOAWNOOyQZB4"
 oauth1_consumer_secret = "KeATWWKKjZYcJr9OExhMq1t2fKH35j5Z8hmPNwKOIg3EhwBHKv"
@@ -42,55 +42,54 @@ api = tweepy.API(authentication, wait_on_rate_limit= True)
 
 
 
-# Now that we have authentication, we can now use the Tweepy and TextBlob modules to retrieve Tweets and discern intention parameters - 
+# Now that we have authentication for our application, we can now use the Tweepy and TextBlob modules to retrieve Tweets and discern intention/polarity values - 
 
 # The below self-defined function will be used later to calculate the percentage of positive, negative and neutral Tweets we have in our sample.
 # The 'part' paramater representing whatever category of sentiment we want to look at and the 'whole' parameter representing our total number of Tweets - NoOfTweets. 
-
 def percentage(part,whole):
    return 100 * float(part)/float(whole)
- 
 
 # Recording the keyword(s) and number of Tweets being considered
-  
 keyword = input("Please enter keyword or hashtag to search: ")
 NoOfTweets = int(input ("Please enter how many tweets to analyse: "))
 
-
 # Using tweepy to search and collect Tweets based on the predefined keyword(s) and number of Tweets we want to analyse - 
-
 tweets = tweepy.Cursor(api.search, q = keyword).items(NoOfTweets) 
 # Above we have defined what keyword(s) we want to analyse as well as the number of times this should be iterated. 
 # The 'tweets' variable is just a list that contains all of the tweets from this iterative process of selecting related tweets. 
 
 # Below are baseline counters that will be added to in order to keep track of the number of each tweet with different sentiment. 
-# As well as neutral lists, where 'tweet_list' is all of the gathered tweets and all the others are Tweet lists that have been sorted by sentiment - 
-
+# Where 'tweet_list' is all of the gathered text from tweets and all the others are a lists containing text from Tweets that have been sorted by sentiment -
 positive = 0
 negative = 0
 neutral = 0
-
-# In the context of TextBlob, polarity indicates is a float in the range [-1-1], where 1 indicates a purely positive statement and -1 and purely negative statement.
-# So polarity will be measured for each iteration to keep account for the extent to which a tweet is positive or negative. 
-polarity = 0
-
 tweet_list = []
 neutral_list = []
 negative_list = []
 positive_list = []
 
+# In the context of TextBlob, polarity indicates is a float in the range [-1-1], where 1 indicates a purely positive statement and -1 and purely negative statement.
+# This varibale will not be placeholder to count the number of Tweets of whatever specification. 
+# It will be measured for each iteration to keep account for the extent to which a tweet is positive or negative. 
+polarity = 0
 
 
-for tweet in tweets: # Essentially, for every Tweet in the list of int(NoOfTweets) Tweets that our API has scraped. 
+for tweet in tweets: # For every Tweet in the list of 'NoOfTweets' Tweets that our API has scraped, 
    tweet_list.append(tweet.text) # Add the Tweet text data to tweet_list 
 
    # We can now make our first 'TextBlob' using the TextBlob module, (Refer to this difficulty in the README file, linking the TextBlob Documentation.)
    # This is in the for loop, so each individual tweet will be treated as a TextBlob to be processed. 
    analysis = TextBlob(tweet.text) # This analysis variable will be needed to calculate your polarity value for each individual tweet. 
    
-   # The polarity_scores method from the SentimentIntensityAnalyzer module, produces a dictionary of positive, negative, neutral and compound indexes. 
-   # That in this case, describe the sentiment of the scrapred tweet. 
-   point_score = SentimentIntensityAnalyzer().polarity_scores(tweet.text)
+   # The polarity_scores method from the SentimentIntensityAnalyzer module, produces a dictionary of positive, negative, neutral and compound indexes.
+   # It is very important to note, that VADER and Textblob, although fulfilling similar purposes, do so in slightly different ways. 
+   # VADER produces individual scores for each interpretation, as well as an aggreagate compound score. 
+   # While Textblob provides only a singular polarity score (that can be compared to the compound score produced by VADER).
+   # As well as a subjectivity score, that aims to measure the degree of objectvity present in the statement can how opintionated it is. 
+   # There are a few pros and cons for each library which are expanded on in the README file, but for the sake of whollsitic anaylsis, both will be used in this project. 
+   
+   # That in this case, describe the sentiment of the scraped tweet. 
+   score = SentimentIntensityAnalyzer().polarity_scores(tweet.text)
    
    # We can now assign the scores associated with the dictionary keys produced, to new variables. 
    neg = score('neg')
