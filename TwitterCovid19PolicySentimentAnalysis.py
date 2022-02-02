@@ -17,6 +17,7 @@ from nltk.sentiment.vader import SentimentIntensityAnalyzer  # [Talk about Vader
 
 
 
+
 # Firstly, we need to earn access to the Twitter API through for this particular app(lication) -
 
 # Twitter API credentials - consumer API key, the consumer API secret, access token and access token secret. 
