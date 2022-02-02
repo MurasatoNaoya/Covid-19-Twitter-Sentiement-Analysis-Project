@@ -73,11 +73,15 @@ positive_list = []
 # It will be measured for each iteration to keep account for the extent to which a tweet is positive or negative. 
 polarity = 0
 
+# A similar thing can be done for the subjectivity float score in the range of [0-1], 
+# Where hypothetical a score of 0 represnts a purely objevtive statement and a score of 1 indicates a purely subjective statement. 
+subjectivity = 0
+
 
 for tweet in tweets: # For every Tweet in the list of 'NoOfTweets' Tweets that our API has scraped, 
    tweet_list.append(tweet.text) # Add the Tweet text data to tweet_list 
 
-   # We can now make our first 'TextBlob' using the TextBlob module, (Refer to this difficulty in the README file, linking the TextBlob Documentation.)
+   # We can now make our first 'TextBlob', which is necessary to able to apply our methods for sentiment analysis. 
    # This is in the for loop, so each individual tweet will be treated as a TextBlob to be processed. 
    analysis = TextBlob(tweet.text) # This analysis variable will be needed to calculate your polarity value for each individual tweet. 
    
@@ -92,16 +96,17 @@ for tweet in tweets: # For every Tweet in the list of 'NoOfTweets' Tweets that o
    score = SentimentIntensityAnalyzer().polarity_scores(tweet.text)
    
    # We can now assign the scores associated with the dictionary keys produced, to new variables. 
-   neg = score('neg')
-   neu = score('neu')
-   pos = score('pos')
-   comp = score'compound'
+   neg = score['neg']
+   neu = score['neu']
+   pos = score['pos']
+   comp = score['compound']
    
    # +- is neccessary to add up all of the polarity score for whatever number of Tweets you analyse. 
-   # This final score can later be divided by that same number of tweets, to produce an average polarity score for a specific topic. 
-   # The final polarity score can be presented as a percentage using percentage(), or it can be presentes as a decimal, both are fine either way. 
+   # This final score can later be divided by that same number of tweets and aggregated to produce an average polarity score for a specific topic. 
    polarity += analysis.sentiment.polarity 
-
+   
+   # A similar thing can be done for our subjectivity score - 
+   subjectivity += analysis.sentiment.subjectivity 
 
 
 
