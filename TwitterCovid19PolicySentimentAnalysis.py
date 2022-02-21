@@ -128,8 +128,8 @@ for tweet in tweets: # For every Tweet in the list of 'NoOfTweets' Tweets that o
 positive_proportion = percentage(positive, NoOfTweets)
 negative_proportion = percentage(negative, NoOfTweets)
 neutral_proportion = percentage(neutral, NoOfTweets)
-aggregated_polarity = polarity / NoOfTweets 
-aggregated_subjectivity = subjectivity / NoOfTweets
+aggregate_polarity = polarity / NoOfTweets 
+aggregate_subjectivity = subjectivity / NoOfTweets
    
   
 
