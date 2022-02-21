@@ -129,7 +129,7 @@ positive_proportion = percentage(positive, NoOfTweets)
 negative_proportion = percentage(negative, NoOfTweets)
 neutral_proportion = percentage(neutral, NoOfTweets)
 aggregated_polarity = polarity / NoOfTweets 
-agregated_subjectivity = subjectivity / NoOfTweets
+aggregated_subjectivity = subjectivity / NoOfTweets
    
   
 
