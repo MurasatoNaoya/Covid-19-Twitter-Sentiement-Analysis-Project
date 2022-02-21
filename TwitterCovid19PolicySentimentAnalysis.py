@@ -10,7 +10,6 @@ from wordcloud import WordCloud
 import sys
 import re
 import matplotlib.pyplot as plt   # Here we used the 'as' keyword to create an alias for the module we want to import. 
-plt.style.use(seaborn-bright) # What style chosen here doesn't really matter, I have chosen 'seaborn-bright' but you could have anything. E.g fivethirtyeight. 
 import pandas as pd
 import numpy as np
 from nltk.sentiment.vader import SentimentIntensityAnalyzer  # For this project, we are using both TextBlob and VADER for our sentiment analysis libraries. 
