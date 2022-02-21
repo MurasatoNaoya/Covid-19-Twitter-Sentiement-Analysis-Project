@@ -13,16 +13,15 @@ import matplotlib.pyplot as plt   # Here we used the 'as' keyword to create an a
 plt.style.use(seaborn-bright) # What style chosen here doesn't really matter, I have chosen 'seaborn-bright' but you could have anything. E.g fivethirtyeight. 
 import pandas as pd
 import numpy as np
-from nltk.sentiment.vader import SentimentIntensityAnalyzer  # [Talk about Vader, it's application(s) and how it can used alongside TextBlob.]
+from nltk.sentiment.vader import SentimentIntensityAnalyzer  # For this project, we are using both TextBlob and VADER for our sentiment analysis. 
 
 
 
 
 # Firstly, we need to earn access to the Twitter API through for this particular app(lication) -
 
-# Twitter API credentials - consumer API key, the consumer API secret, access token and access token secret. 
-# The keys listed below are the keys for my particular Twitter Developer account, I probably shouldn't include them for security reasons. 
-# But I can always take them out and if someone goes out of their way to use my application, then so be it!  
+
+# Twitter API credentials - consumer API key, the consumer API secret, access token and access token secret.   
 Oauth1_consumer_key = "AVudPPS0nePRUgOAWNOOyQZB4"
 oauth1_consumer_secret = "KeATWWKKjZYcJr9OExhMq1t2fKH35j5Z8hmPNwKOIg3EhwBHKv"
 oauth1_access_token = "1454520951136194564-dXDgv1tI9EeRvMysAI1xpJxjpDW9hg"
@@ -43,10 +42,11 @@ api = tweepy.API(authentication, wait_on_rate_limit= True)
 
 
 
-# Now that we have authentication for our application, we can now use Tweepy, TextBlob and VADER to conduct sentiment analysis - 
+
+# NAfter authenticating our application, we can now use Tweepy, TextBlob and VADER to conduct sentiment analysis - 
 
 # The below self-defined function will be used later to calculate the percentage of positive, negative and neutral Tweets we have in our sample.
-# The 'part' paramater representing whatever category of sentiment we want to look at and the 'whole' parameter representing our total number of Tweets - NoOfTweets. 
+# Where the 'part' paramater represents whatever category of sentiment we are interested in and the 'whole' parameter represents our total number of Tweets - NoOfTweets. 
 def percentage(part,whole):
    return 100 * float(part)/float(whole)
 
