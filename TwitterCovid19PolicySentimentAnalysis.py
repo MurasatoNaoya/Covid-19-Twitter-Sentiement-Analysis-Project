@@ -21,6 +21,7 @@ from nltk.sentiment.vader import SentimentIntensityAnalyzer  # For this project,
 
 
 # Twitter API credentials - consumer API key, the consumer API secret, access token and access token secret.   
+# The below keys will likely be expired and will need to be regenerated via the Twitter Developer portal. 
 Oauth1_consumer_key = "AVudPPS0nePRUgOAWNOOyQZB4"
 oauth1_consumer_secret = "KeATWWKKjZYcJr9OExhMq1t2fKH35j5Z8hmPNwKOIg3EhwBHKv"
 oauth1_access_token = "1454520951136194564-dXDgv1tI9EeRvMysAI1xpJxjpDW9hg"
