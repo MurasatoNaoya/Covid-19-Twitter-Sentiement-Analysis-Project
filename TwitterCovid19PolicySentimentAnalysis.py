@@ -54,7 +54,7 @@ keyword = input("Please enter keyword or hashtag to focus your search: ")
 NoOfTweets = int(input ("Please enter how many tweets you want to analyse: "))
 
 # Using tweepy to search and collect Tweets based on the predefined keyword(s) and number of Tweets we want to analyse - 
-tweets = tweepy.Cursor(api.search, q = keyword).items(NoOfTweets) 
+tweets = tweepy.Cursor(api.search_tweets, q = keyword).items(NoOfTweets) 
 # Above we have defined what keyword(s) we want to analyse as well as the number of times this should be iterated. 
 # The 'tweets' variable is just a list that contains all of the tweets from this iterative process of selecting related tweets. 
 
