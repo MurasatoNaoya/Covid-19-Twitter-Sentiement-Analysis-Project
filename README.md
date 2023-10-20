@@ -6,8 +6,6 @@ It combines the power of several essential libraries and modules to gather, clea
 specific keywords, within specified locations. The scraped tweets are then analysed using the TextBlob sentiment analysis
 library, where their polarity scorces and subjectivity scores are then returned. 
 
-# Sentiment Analysis of Tweets from Twitter
-
 ## Usage
 
 1. **Running the Script**: Execute the script in your Python environment of choice.
